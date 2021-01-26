@@ -1,4 +1,4 @@
-package com.photosOrganizer.photosOrganizer;
+package com.photosOrganizer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
