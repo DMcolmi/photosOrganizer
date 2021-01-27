@@ -9,9 +9,10 @@ import javax.persistence.Table;
 @Table(name="t_url_photo_location")
 public class UrlPhotoLocation {
 	
-	@Id
+	
 	private String url;
 	
+	@Id
 	@GeneratedValue
 	private int id;	
 	

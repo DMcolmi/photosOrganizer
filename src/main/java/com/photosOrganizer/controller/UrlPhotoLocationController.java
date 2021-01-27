@@ -28,15 +28,12 @@ public class UrlPhotoLocationController {
 	@RequestMapping("/InsertUrl")
 	public ModelAndView insertUrl(UrlPhotoLocation url) {
 		ModelAndView mv = new ModelAndView();
-		if (!StringUtils.hasText(url.getUrl()) || repo.existsById(url.getUrl())){
+		if (!StringUtils.hasText(url.getUrl()) || !repo.findByUrl(url.getUrl()).isEmpty()){
 			mv.setViewName("UrlLocationPresente");
 		} else {
 			repo.save(url);
 			mv.setViewName("InsertUrlForm");
 		}
-				
-		
-		
 		return mv;
 	}
 }
