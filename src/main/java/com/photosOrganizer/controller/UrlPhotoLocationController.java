@@ -1,5 +1,7 @@
 package com.photosOrganizer.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -36,4 +38,18 @@ public class UrlPhotoLocationController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping("/ShowUrls")
+	public ModelAndView showUrls() {
+		ModelAndView mv = new ModelAndView();
+		
+		List<UrlPhotoLocation> urls = repo.findAll();		
+		
+		mv.addObject("urls", urls);
+		mv.setViewName("ShowUrlS");
+		
+		return mv;
+		
+	}
+	
 }

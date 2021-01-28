@@ -12,5 +12,10 @@
 		<input type="text" name="url"> <br /> 
 		<input type="submit" value="Submit" />
 	</form>
+	
+	<br /> 
+	<form action="ShowUrls">
+		<input type="submit" value="Mostra Url-s inseriti">
+	</form>
 </body>
 </html>

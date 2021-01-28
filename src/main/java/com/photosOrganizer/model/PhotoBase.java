@@ -3,6 +3,7 @@ package com.photosOrganizer.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,6 +12,8 @@ import javax.persistence.Table;
 public class PhotoBase {
 	
 	@Id
+	@GeneratedValue
+	private int id;	
 	private String originalName;
 	private String originalUrlLocation;
 	private String make;
