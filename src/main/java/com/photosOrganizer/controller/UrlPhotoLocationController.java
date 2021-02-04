@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.photosOrganizer.dao.UrlPhotoLocationRepository;
 import com.photosOrganizer.model.UrlPhotoLocation;
+import com.photosOrganizer.service.FetchPhotoPropertiesService;
 
 @Controller
 public class UrlPhotoLocationController {
@@ -17,9 +18,11 @@ public class UrlPhotoLocationController {
 	@Autowired
 	private UrlPhotoLocationRepository repo;
 	
+	@Autowired
+	private FetchPhotoPropertiesService service;
+	
 	@RequestMapping("/InsertUrlForm")
 	public ModelAndView insertUrlForm() {
-		System.out.println("Controller triggerato");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("InsertUrlForm");
 		
@@ -50,6 +53,15 @@ public class UrlPhotoLocationController {
 		
 		return mv;
 		
+	}
+	
+	
+	
+	@RequestMapping("/InsertPhotosFromUrl")
+	public void insertPhotosFromUrl(UrlPhotoLocation url) {
+		
+		service.saveAllPhotoFormUrl(url.getUrl());
+		System.out.println(url.getUrl());
 	}
 	
 }

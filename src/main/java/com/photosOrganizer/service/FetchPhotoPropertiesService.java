@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.drew.imaging.ImageMetadataReader;
 import com.drew.imaging.ImageProcessingException;
@@ -20,6 +22,7 @@ import com.photosOrganizer.model.PhotoBase;
 // https://github.com/drewnoakes/metadata-extractor/wiki/Getting-Started-(Java)#2-query-tags
 // https://javadoc.io/doc/com.drewnoakes/metadata-extractor/latest/com/drew/metadata/exif/ExifIFD0Directory.html
 
+@Component
 public class FetchPhotoPropertiesService {
 
 	@Autowired
