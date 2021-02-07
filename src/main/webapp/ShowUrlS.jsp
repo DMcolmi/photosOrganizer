@@ -12,7 +12,6 @@
 		<c:forEach items="${urls}" var="url">
 			<tr>
 				<td><c:out value="${url.id}" /></td>
-				<td><c:out value="${url.url}" /></td>
 				<td><form action="InsertPhotosFromUrl">
 					<input type="text" name="url" value="${url.url}">
 					<input type="submit" value="Submit" />

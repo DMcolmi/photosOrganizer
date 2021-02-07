@@ -60,14 +60,5 @@ public class PhotoBase {
 	public void setDateOriginal(Date dateOriginal) {
 		this.dateOriginal = dateOriginal;
 	}
-	public PhotoBase(String originalName, String originalUrlLocation, String make, String model, Date date,
-			Date dateOriginal) {
-		super();
-		this.originalName = originalName;
-		this.originalUrlLocation = originalUrlLocation;
-		this.make = make;
-		this.model = model;
-		this.date = date;
-		this.dateOriginal = dateOriginal;
-	}
+	
 }

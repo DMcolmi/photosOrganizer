@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.drew.imaging.ImageMetadataReader;
 import com.drew.imaging.ImageProcessingException;
@@ -15,6 +15,7 @@ import com.drew.metadata.Directory;
 import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
 import com.drew.metadata.exif.ExifIFD0Directory;
+import com.drew.metadata.exif.ExifSubIFDDirectory;
 import com.photosOrganizer.dao.PhotoBaseRepository;
 import com.photosOrganizer.model.PhotoBase;
 
@@ -22,11 +23,8 @@ import com.photosOrganizer.model.PhotoBase;
 // https://github.com/drewnoakes/metadata-extractor/wiki/Getting-Started-(Java)#2-query-tags
 // https://javadoc.io/doc/com.drewnoakes/metadata-extractor/latest/com/drew/metadata/exif/ExifIFD0Directory.html
 
-@Component
+@Service
 public class FetchPhotoPropertiesService {
-
-	@Autowired
-	PhotoBase photo;
 
 	@Autowired
 	PhotoBaseRepository photoRepo;
@@ -57,18 +55,21 @@ public class FetchPhotoPropertiesService {
 		return null;
 	}
 
+	@Transactional
 	private void savePhotoBaseMetadata(Metadata photoMetadata, String originalName, String originalUrlLocation) {
 
-		Directory dir = photoMetadata.getFirstDirectoryOfType(ExifIFD0Directory.class);
-
-		photo.setDate(dir.getDate(ExifIFD0Directory.TAG_DATETIME));
-		photo.setDateOriginal(dir.getDate(ExifIFD0Directory.TAG_DATETIME_ORIGINAL));
-		photo.setMake(dir.getString(ExifIFD0Directory.TAG_MAKE));
-		photo.setModel(dir.getString(ExifIFD0Directory.TAG_MODEL));
+		Directory dirFD0 = photoMetadata.getFirstDirectoryOfType(ExifIFD0Directory.class);
+		Directory dirSubIFD = photoMetadata.getFirstDirectoryOfType(ExifSubIFDDirectory.class);
+		PhotoBase photo = new PhotoBase();
+		
+		photo.setDate(dirFD0.getDate(ExifIFD0Directory.TAG_DATETIME));
+		photo.setDateOriginal(dirSubIFD.getDate(ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL));
+		photo.setMake(dirFD0.getString(ExifIFD0Directory.TAG_MAKE));
+		photo.setModel(dirFD0.getString(ExifIFD0Directory.TAG_MODEL));
 		photo.setOriginalName(originalName);
 		photo.setOriginalUrlLocation(originalUrlLocation);
 
-		photoRepo.save(photo);
+		photoRepo.saveAndFlush(photo);
 
 	}
 

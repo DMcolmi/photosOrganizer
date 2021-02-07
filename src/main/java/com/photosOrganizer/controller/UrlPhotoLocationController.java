@@ -58,10 +58,13 @@ public class UrlPhotoLocationController {
 	
 	
 	@RequestMapping("/InsertPhotosFromUrl")
-	public void insertPhotosFromUrl(UrlPhotoLocation url) {
-		
+	public ModelAndView insertPhotosFromUrl(UrlPhotoLocation url) {
+		ModelAndView mv = new ModelAndView();
 		service.saveAllPhotoFormUrl(url.getUrl());
 		System.out.println(url.getUrl());
+		mv.setViewName("InsertUrlForm");
+	
+		return mv;
 	}
 	
 }
