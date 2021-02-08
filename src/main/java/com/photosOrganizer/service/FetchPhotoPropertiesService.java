@@ -16,6 +16,8 @@ import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
 import com.drew.metadata.exif.ExifIFD0Directory;
 import com.drew.metadata.exif.ExifSubIFDDirectory;
+import com.drew.metadata.file.FileSystemDescriptor;
+import com.drew.metadata.file.FileSystemDirectory;
 import com.photosOrganizer.dao.PhotoBaseRepository;
 import com.photosOrganizer.model.PhotoBase;
 
@@ -60,12 +62,19 @@ public class FetchPhotoPropertiesService {
 
 		Directory dirFD0 = photoMetadata.getFirstDirectoryOfType(ExifIFD0Directory.class);
 		Directory dirSubIFD = photoMetadata.getFirstDirectoryOfType(ExifSubIFDDirectory.class);
-		PhotoBase photo = new PhotoBase();
+		PhotoBase photo = new PhotoBase();		
 		
-		photo.setDate(dirFD0.getDate(ExifIFD0Directory.TAG_DATETIME));
-		photo.setDateOriginal(dirSubIFD.getDate(ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL));
-		photo.setMake(dirFD0.getString(ExifIFD0Directory.TAG_MAKE));
-		photo.setModel(dirFD0.getString(ExifIFD0Directory.TAG_MODEL));
+		try {
+			photo.setDate(dirFD0.getDate(ExifIFD0Directory.TAG_DATETIME));
+			photo.setMake(dirFD0.getString(ExifIFD0Directory.TAG_MAKE));
+			photo.setModel(dirFD0.getString(ExifIFD0Directory.TAG_MODEL));
+			photo.setDateOriginal(dirSubIFD.getDate(ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL));
+		} catch (NullPointerException e){
+			System.out.println(originalName + "ha il tag ExifIFD0Directory nullo");
+			Directory dirFileSys = photoMetadata.getFirstDirectoryOfType(FileSystemDirectory.class);
+			photo.setDate(dirFileSys.getDate(FileSystemDirectory.TAG_FILE_MODIFIED_DATE));
+		}
+			
 		photo.setOriginalName(originalName);
 		photo.setOriginalUrlLocation(originalUrlLocation);
 
