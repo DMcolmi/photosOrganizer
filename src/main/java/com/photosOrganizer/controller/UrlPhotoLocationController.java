@@ -2,6 +2,8 @@ package com.photosOrganizer.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -14,6 +16,8 @@ import com.photosOrganizer.service.FetchPhotoPropertiesService;
 
 @Controller
 public class UrlPhotoLocationController {
+	
+	Logger log = LoggerFactory.getLogger(UrlPhotoLocationController.class);
 	
 	@Autowired
 	private UrlPhotoLocationRepository repo;
@@ -61,7 +65,7 @@ public class UrlPhotoLocationController {
 	public ModelAndView insertPhotosFromUrl(UrlPhotoLocation url) {
 		ModelAndView mv = new ModelAndView();
 		service.saveAllPhotoFormUrl(url.getUrl());
-		System.out.println(url.getUrl());
+		log.info(url.getUrl());
 		mv.setViewName("InsertUrlForm");
 	
 		return mv;

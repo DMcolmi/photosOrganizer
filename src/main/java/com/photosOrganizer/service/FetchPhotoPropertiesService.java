@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +23,8 @@ import com.drew.metadata.file.FileSystemDirectory;
 import com.photosOrganizer.dao.PhotoBaseRepository;
 import com.photosOrganizer.model.PhotoBase;
 
+
+
 // documentation at https://javadoc.io/doc/com.drewnoakes/metadata-extractor/latest/index.html
 // https://github.com/drewnoakes/metadata-extractor/wiki/Getting-Started-(Java)#2-query-tags
 // https://javadoc.io/doc/com.drewnoakes/metadata-extractor/latest/com/drew/metadata/exif/ExifIFD0Directory.html
@@ -30,6 +34,8 @@ public class FetchPhotoPropertiesService {
 
 	@Autowired
 	PhotoBaseRepository photoRepo;
+	
+	Logger log = LoggerFactory.getLogger(FetchPhotoPropertiesService.class);
 
 	public void saveAllPhotoFormUrl(String url) {
 
@@ -52,7 +58,7 @@ public class FetchPhotoPropertiesService {
 		try {
 			return ImageMetadataReader.readMetadata(new File(photoPathName));
 		} catch (ImageProcessingException | IOException e) {
-			e.printStackTrace();
+			log.error(e.getMessage());
 		}
 		return null;
 	}
@@ -70,7 +76,7 @@ public class FetchPhotoPropertiesService {
 			photo.setModel(dirFD0.getString(ExifIFD0Directory.TAG_MODEL));
 			photo.setDateOriginal(dirSubIFD.getDate(ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL));
 		} catch (NullPointerException e){
-			System.out.println(originalName + "ha il tag ExifIFD0Directory nullo");
+			log.info(originalName + "ha il tag ExifIFD0Directory nullo");
 			Directory dirFileSys = photoMetadata.getFirstDirectoryOfType(FileSystemDirectory.class);
 			photo.setDate(dirFileSys.getDate(FileSystemDirectory.TAG_FILE_MODIFIED_DATE));
 		}
@@ -85,7 +91,7 @@ public class FetchPhotoPropertiesService {
 	private void printTagsMetadata(Metadata metadata) {
 		for (Directory directory : metadata.getDirectories()) {
 			for (Tag tag : directory.getTags()) {
-				System.out.println(tag);
+				log.info(tag.toString());
 			}
 		}
 	}
