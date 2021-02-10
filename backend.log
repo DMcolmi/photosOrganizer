@@ -1,0 +1,209 @@
+2021-02-10 19:58:28.691  INFO 19575 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 19575 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-10 19:58:28.693  INFO 19575 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-10 19:58:29.142  INFO 19575 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-10 19:58:29.178  INFO 19575 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2021-02-10 19:58:29.603  INFO 19575 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-10 19:58:29.611  INFO 19575 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-10 19:58:29.612  INFO 19575 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-10 19:58:29.811  INFO 19575 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-10 19:58:29.814  INFO 19575 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-10 19:58:29.814  INFO 19575 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1081 ms
+2021-02-10 19:58:29.955  INFO 19575 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-10 19:58:29.984  INFO 19575 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-10 19:58:30.113  INFO 19575 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-10 19:58:30.173  INFO 19575 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-10 19:58:30.527  INFO 19575 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-10 19:58:30.548  INFO 19575 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-10 19:58:30.979  INFO 19575 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-10 19:58:30.984  INFO 19575 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-10 19:58:31.339  WARN 19575 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-10 19:58:31.554  INFO 19575 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-10 19:58:31.757  INFO 19575 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-10 19:58:31.767  INFO 19575 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.363 seconds (JVM running for 3.648)
+2021-02-10 19:59:34.132  INFO 19575 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-10 19:59:34.132  INFO 19575 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-10 19:59:34.133  INFO 19575 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-10 19:59:42.226  INFO 19575 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : juan-les-pins.jpg ha il tag ExifIFD0Directory nullo
+2021-02-10 19:59:42.242  INFO 19575 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : papa-francesco.epub ha il tag ExifIFD0Directory nullo
+2021-02-10 19:59:42.250 ERROR 19575 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : File format could not be determined
+2021-02-10 19:59:42.250  INFO 19575 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : 70x100_su_carta_bianca.pdf ha il tag ExifIFD0Directory nullo
+2021-02-10 19:59:42.254 ERROR 19575 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.photosOrganizer.service.FetchPhotoPropertiesService.savePhotoBaseMetadata(FetchPhotoPropertiesService.java:80) ~[classes/:na]
+	at com.photosOrganizer.service.FetchPhotoPropertiesService.saveAllPhotoFormUrl(FetchPhotoPropertiesService.java:48) ~[classes/:na]
+	at com.photosOrganizer.controller.UrlPhotoLocationController.insertPhotosFromUrl(UrlPhotoLocationController.java:67) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_271]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_271]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_271]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_271]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_271]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_271]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_271]
+
+2021-02-10 20:04:50.683  INFO 19575 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-10 20:04:50.684  INFO 19575 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-10 20:04:50.686  INFO 19575 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-10 20:04:50.691  INFO 19575 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-10 20:14:17.739  INFO 20271 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 20271 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-10 20:14:17.741  INFO 20271 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-10 20:14:18.185  INFO 20271 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-10 20:14:18.226  INFO 20271 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+2021-02-10 20:14:18.618  INFO 20271 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-10 20:14:18.627  INFO 20271 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-10 20:14:18.627  INFO 20271 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-10 20:14:18.858  INFO 20271 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-10 20:14:18.861  INFO 20271 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-10 20:14:18.861  INFO 20271 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1087 ms
+2021-02-10 20:14:19.034  INFO 20271 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-10 20:14:19.066  INFO 20271 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-10 20:14:19.194  INFO 20271 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-10 20:14:19.261  INFO 20271 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-10 20:14:19.573  INFO 20271 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-10 20:14:19.602  INFO 20271 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-10 20:14:20.043  INFO 20271 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-10 20:14:20.050  INFO 20271 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-10 20:14:20.388  WARN 20271 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-10 20:14:20.571  INFO 20271 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-10 20:14:20.754  INFO 20271 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-10 20:14:20.760  INFO 20271 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.314 seconds (JVM running for 3.541)
+2021-02-10 20:14:37.003  INFO 20271 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-10 20:14:37.003  INFO 20271 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-10 20:14:37.004  INFO 20271 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-02-10 20:14:37.112 ERROR 20271 --- [http-nio-8080-exec-1] c.p.service.FetchPhotoPropertiesService  : juan-les-pins.jpg ha il tag ExifIFD0Directory nullo
+2021-02-10 20:14:37.113 ERROR 20271 --- [http-nio-8080-exec-1] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:14:37.133 ERROR 20271 --- [http-nio-8080-exec-1] c.p.service.FetchPhotoPropertiesService  : papa-francesco.epub ha il tag ExifIFD0Directory nullo
+2021-02-10 20:14:37.133 ERROR 20271 --- [http-nio-8080-exec-1] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:14:37.141 ERROR 20271 --- [http-nio-8080-exec-1] c.p.service.FetchPhotoPropertiesService  : File format could not be determined
+2021-02-10 20:14:37.143 ERROR 20271 --- [http-nio-8080-exec-1] c.p.service.FetchPhotoPropertiesService  : 70x100_su_carta_bianca.pdf ha il tag ExifIFD0Directory nullo
+2021-02-10 20:14:37.143 ERROR 20271 --- [http-nio-8080-exec-1] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:14:37.143 ERROR 20271 --- [http-nio-8080-exec-1] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:14:37.190  INFO 20271 --- [http-nio-8080-exec-1] c.p.c.UrlPhotoLocationController         : /home/davide/Downloads
+2021-02-10 20:16:03.397 ERROR 20271 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : juan-les-pins.jpg ha il tag ExifIFD0Directory nullo
+2021-02-10 20:16:03.398 ERROR 20271 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:16:03.415 ERROR 20271 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : papa-francesco.epub ha il tag ExifIFD0Directory nullo
+2021-02-10 20:16:03.416 ERROR 20271 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:16:03.424 ERROR 20271 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : File format could not be determined
+2021-02-10 20:16:03.425 ERROR 20271 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : 70x100_su_carta_bianca.pdf ha il tag ExifIFD0Directory nullo
+2021-02-10 20:16:03.425 ERROR 20271 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:16:03.425 ERROR 20271 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:16:03.437  INFO 20271 --- [http-nio-8080-exec-4] c.p.c.UrlPhotoLocationController         : /home/davide/Downloads
+2021-02-10 20:17:26.878  INFO 20271 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-10 20:17:26.880  INFO 20271 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-10 20:17:26.884  INFO 20271 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-10 20:17:26.893  INFO 20271 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-10 20:17:49.954  INFO 20457 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 20457 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-10 20:17:49.967  INFO 20457 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-10 20:17:50.589  INFO 20457 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-10 20:17:50.638  INFO 20457 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2021-02-10 20:17:51.136  INFO 20457 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-10 20:17:51.146  INFO 20457 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-10 20:17:51.147  INFO 20457 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-10 20:17:51.332  INFO 20457 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-10 20:17:51.335  INFO 20457 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-10 20:17:51.336  INFO 20457 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1307 ms
+2021-02-10 20:17:51.574  INFO 20457 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-10 20:17:51.618  INFO 20457 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-10 20:17:51.734  INFO 20457 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-10 20:17:51.821  INFO 20457 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-10 20:17:52.185  INFO 20457 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-10 20:17:52.219  INFO 20457 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-10 20:17:52.829  INFO 20457 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-10 20:17:52.837  INFO 20457 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-10 20:17:53.525  WARN 20457 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-10 20:17:53.617  INFO 20457 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-10 20:17:53.856  INFO 20457 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-10 20:17:53.862  INFO 20457 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 4.324 seconds (JVM running for 4.862)
+2021-02-10 20:18:14.422  INFO 20457 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-10 20:18:14.422  INFO 20457 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-10 20:18:14.423  INFO 20457 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-10 20:18:33.097 ERROR 20457 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : juan-les-pins.jpg ha il tag ExifIFD0Directory nullo
+2021-02-10 20:18:33.098 ERROR 20457 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:18:46.445 ERROR 20457 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : papa-francesco.epub ha il tag ExifIFD0Directory nullo
+2021-02-10 20:18:46.446 ERROR 20457 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:18:51.409 ERROR 20457 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : File format could not be determined
+2021-02-10 20:18:51.409 ERROR 20457 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : 70x100_su_carta_bianca.pdf ha il tag ExifIFD0Directory nullo
+2021-02-10 20:18:51.410 ERROR 20457 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:19:54.482 ERROR 20457 --- [http-nio-8080-exec-4] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:20:04.524  INFO 20457 --- [http-nio-8080-exec-4] c.p.c.UrlPhotoLocationController         : /home/davide/Downloads
+2021-02-10 20:23:07.789  INFO 20779 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 20779 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-10 20:23:07.791  INFO 20779 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-10 20:23:08.225  INFO 20779 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-10 20:23:08.260  INFO 20779 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2021-02-10 20:23:08.641  INFO 20779 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-10 20:23:08.651  INFO 20779 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-10 20:23:08.652  INFO 20779 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-10 20:23:08.839  INFO 20779 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-10 20:23:08.842  INFO 20779 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-10 20:23:08.842  INFO 20779 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1020 ms
+2021-02-10 20:23:08.966  INFO 20779 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-10 20:23:08.993  INFO 20779 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-10 20:23:09.111  INFO 20779 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-10 20:23:09.169  INFO 20779 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-10 20:23:09.471  INFO 20779 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-10 20:23:09.490  INFO 20779 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-10 20:23:09.869  INFO 20779 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-10 20:23:09.874  INFO 20779 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-10 20:23:10.200  WARN 20779 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-10 20:23:10.385  INFO 20779 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-10 20:23:10.557  INFO 20779 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-10 20:23:10.562  INFO 20779 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.043 seconds (JVM running for 3.276)
+2021-02-10 20:25:14.468  INFO 20779 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-10 20:25:14.468  INFO 20779 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-10 20:25:14.469  INFO 20779 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-10 20:25:17.783 ERROR 20779 --- [http-nio-8080-exec-2] c.p.service.FetchPhotoPropertiesService  : juan-les-pins.jpg ha il tag ExifIFD0Directory nullo
+2021-02-10 20:25:17.783 ERROR 20779 --- [http-nio-8080-exec-2] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:25:17.801 ERROR 20779 --- [http-nio-8080-exec-2] c.p.service.FetchPhotoPropertiesService  : papa-francesco.epub ha il tag ExifIFD0Directory nullo
+2021-02-10 20:25:17.801 ERROR 20779 --- [http-nio-8080-exec-2] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:25:17.809 ERROR 20779 --- [http-nio-8080-exec-2] c.p.service.FetchPhotoPropertiesService  : File format could not be determined
+2021-02-10 20:25:17.809 ERROR 20779 --- [http-nio-8080-exec-2] c.p.service.FetchPhotoPropertiesService  : 70x100_su_carta_bianca.pdf ha il tag ExifIFD0Directory nullo
+2021-02-10 20:25:17.809 ERROR 20779 --- [http-nio-8080-exec-2] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:25:17.809 ERROR 20779 --- [http-nio-8080-exec-2] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-10 20:25:17.842  INFO 20779 --- [http-nio-8080-exec-2] c.p.c.UrlPhotoLocationController         : /home/davide/Downloads
+2021-02-10 20:26:00.128  INFO 20779 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-10 20:26:00.129  INFO 20779 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-10 20:26:00.131  INFO 20779 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-10 20:26:00.139  INFO 20779 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

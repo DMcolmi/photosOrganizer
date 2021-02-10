@@ -1,6 +1,7 @@
 package com.photosOrganizer.service;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +19,6 @@ import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
 import com.drew.metadata.exif.ExifIFD0Directory;
 import com.drew.metadata.exif.ExifSubIFDDirectory;
-import com.drew.metadata.file.FileSystemDescriptor;
 import com.drew.metadata.file.FileSystemDirectory;
 import com.photosOrganizer.dao.PhotoBaseRepository;
 import com.photosOrganizer.model.PhotoBase;
@@ -66,19 +66,25 @@ public class FetchPhotoPropertiesService {
 	@Transactional
 	private void savePhotoBaseMetadata(Metadata photoMetadata, String originalName, String originalUrlLocation) {
 
-		Directory dirFD0 = photoMetadata.getFirstDirectoryOfType(ExifIFD0Directory.class);
-		Directory dirSubIFD = photoMetadata.getFirstDirectoryOfType(ExifSubIFDDirectory.class);
 		PhotoBase photo = new PhotoBase();		
 		
 		try {
+			Directory dirFD0 = photoMetadata.getFirstDirectoryOfType(ExifIFD0Directory.class);
+			Directory dirSubIFD = photoMetadata.getFirstDirectoryOfType(ExifSubIFDDirectory.class);
 			photo.setDate(dirFD0.getDate(ExifIFD0Directory.TAG_DATETIME));
 			photo.setMake(dirFD0.getString(ExifIFD0Directory.TAG_MAKE));
 			photo.setModel(dirFD0.getString(ExifIFD0Directory.TAG_MODEL));
 			photo.setDateOriginal(dirSubIFD.getDate(ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL));
 		} catch (NullPointerException e){
-			log.info(originalName + "ha il tag ExifIFD0Directory nullo");
-			Directory dirFileSys = photoMetadata.getFirstDirectoryOfType(FileSystemDirectory.class);
-			photo.setDate(dirFileSys.getDate(FileSystemDirectory.TAG_FILE_MODIFIED_DATE));
+			log.error(originalName + " ha il tag ExifIFD0Directory nullo");
+			log.error(e.getMessage());
+			try {
+				Directory dirFileSys = photoMetadata.getFirstDirectoryOfType(FileSystemDirectory.class);
+				photo.setDate(dirFileSys.getDate(FileSystemDirectory.TAG_FILE_MODIFIED_DATE));				
+			} catch(NullPointerException e2){
+				log.error(e2.getMessage());
+				return;
+			}
 		}
 			
 		photo.setOriginalName(originalName);
@@ -94,6 +100,25 @@ public class FetchPhotoPropertiesService {
 				log.info(tag.toString());
 			}
 		}
+	}
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		
+//		File file = new File("/home/davide/Downloads/papa-francesco.epub");
+//		BufferedInputStream stream = new BufferedInputStream(new FileInputStream(file));
+//		try {
+//			FileTypeDetector.detectFileType(stream);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+		try {
+			 ImageMetadataReader.readMetadata(new File("/home/davide/Downloads/70x100_su_carta_bianca.pdf"));
+		} catch (ImageProcessingException | IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
 	}
 
 }
