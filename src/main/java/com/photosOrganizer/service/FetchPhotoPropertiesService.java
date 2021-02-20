@@ -35,6 +35,9 @@ public class FetchPhotoPropertiesService {
 	@Autowired
 	PhotoBaseRepository photoRepo;
 	
+	@Autowired
+	FetchFileTypeService ftps;
+	
 	Logger log = LoggerFactory.getLogger(FetchPhotoPropertiesService.class);
 
 	public void saveAllPhotoFormUrl(String url) {
@@ -89,6 +92,7 @@ public class FetchPhotoPropertiesService {
 			
 		photo.setOriginalName(originalName);
 		photo.setOriginalUrlLocation(originalUrlLocation);
+		photo.setFileExtension(ftps.getFileExtension(originalName));
 
 		photoRepo.saveAndFlush(photo);
 

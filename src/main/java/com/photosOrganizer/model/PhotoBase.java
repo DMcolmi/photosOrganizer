@@ -23,7 +23,14 @@ public class PhotoBase {
 	private String model;
 	private Date date;
 	private Date dateOriginal;
+	private String fileExtension;
 	
+	public String getFileExtension() {
+		return fileExtension;
+	}
+	public void setFileExtension(String fileExtension) {
+		this.fileExtension = fileExtension;
+	}
 	public String getOriginalName() {
 		return originalName;
 	}
