@@ -10,6 +10,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.photosOrganizer.dao.PhotoBaseRepository;
 import com.photosOrganizer.dao.UrlPhotoLocationRepository;
 import com.photosOrganizer.model.UrlPhotoLocation;
 import com.photosOrganizer.service.FetchPhotoPropertiesService;
@@ -24,6 +25,9 @@ public class UrlPhotoLocationController {
 	
 	@Autowired
 	private FetchPhotoPropertiesService service;
+	
+	@Autowired
+	private PhotoBaseRepository photoRepo;
 	
 	@RequestMapping("/InsertUrlForm")
 	public ModelAndView insertUrlForm() {
@@ -68,6 +72,21 @@ public class UrlPhotoLocationController {
 		log.info(url.getUrl());
 		mv.setViewName("InsertUrlForm");
 	
+		return mv;
+	}
+	
+	@RequestMapping("/FetchUrlAndExt")
+	public ModelAndView fetchUrlAndExt() {
+		ModelAndView mv = new ModelAndView();
+		
+		List<String> urls = photoRepo.fetchAllOriginalUrlLocation();
+		
+		List<String> extensions = photoRepo.fetchAllFileExtension();
+		
+		mv.setViewName("ProcessByUrlAndExtension");
+		
+		mv.addObject("urls", urls);
+		mv.addObject("extensions", extensions);
 		return mv;
 	}
 	
