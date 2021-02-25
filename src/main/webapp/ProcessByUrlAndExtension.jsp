@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +8,47 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
+	<table>
 		<c:forEach items="${urls}" var="url">
 			<tr>
-				<td><c:out value="${url}" /></td>	
+				<td><c:out value="${url}" /></td>
 			</tr>
 		</c:forEach>
-</table>
-<br />
-<table>
+	</table>
+	<br />
+	<br />
+	<table>
 		<c:forEach items="${extensions}" var="ext">
 			<tr>
 				<td><c:out value="${ext}" /></td>
 			</tr>
 		</c:forEach>
-</table>
+	</table>
+	<br />
+	<br />
+	<table>
+		<c:forEach items="${makes}" var="make">
+			<tr>
+				<td><c:out value="${make}" /></td>
+			</tr>
+		</c:forEach>
+	</table>
+	<br />
+	<br />
+	<form action="fetchDataTest">
+		<table>
+			<c:forEach items="${models}" var="model">
+				<tr>
+					<td>
+						<div>
+							<input type="checkbox" id="model" name="model" value="${model}">
+							<label for="model">${model}</label>
+						</div>
+					</td>
+				</tr>
+			</c:forEach>
+		</table>
+		<input type="submit" value="Submit now" />
+	</form>
 </body>
 </html>

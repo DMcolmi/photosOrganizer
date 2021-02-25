@@ -18,6 +18,12 @@ public interface PhotoBaseRepository extends JpaRepository<PhotoBase, String> {
 
 	@Query("select distinct u.fileExtension from PhotoBase u")
 	public List<String> fetchAllFileExtension();
+	
+	@Query("select distinct u.make from PhotoBase u")
+	public List<String> fetchAllMake();
+	
+	@Query("select distinct u.model from PhotoBase u")
+	public List<String> fetchAllModel();
 		
 }
 

@@ -17,5 +17,8 @@
 	<form action="ShowUrls">
 		<input type="submit" value="Mostra Url-s inseriti">
 	</form>
+	<form action="FetchUrlAndExt">
+		<input type="submit" value="Show Saved Data">
+	</form>
 </body>
 </html>

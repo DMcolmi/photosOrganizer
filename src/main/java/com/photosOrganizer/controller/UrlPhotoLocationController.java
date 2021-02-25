@@ -83,10 +83,28 @@ public class UrlPhotoLocationController {
 		
 		List<String> extensions = photoRepo.fetchAllFileExtension();
 		
+		List<String> makes = photoRepo.fetchAllMake();
+		
+		List<String> models = photoRepo.fetchAllModel();
+		
 		mv.setViewName("ProcessByUrlAndExtension");
 		
 		mv.addObject("urls", urls);
 		mv.addObject("extensions", extensions);
+		mv.addObject("makes", makes);
+		mv.addObject("models", models);
+		
+		return mv;
+	}
+	
+	@RequestMapping("/fetchDataTest")
+	public ModelAndView fetchDataTest(String model) {
+		ModelAndView mv = new ModelAndView();
+		
+		System.out.println(model);
+		
+		mv.setViewName("ProcessByUrlAndExtension");
+	
 		return mv;
 	}
 	

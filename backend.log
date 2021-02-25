@@ -1,29 +1,800 @@
-2021-02-22 20:32:56.636  INFO 7340 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 7340 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
-2021-02-22 20:32:56.643  INFO 7340 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
-2021-02-22 20:32:57.104  INFO 7340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-02-22 20:32:57.141  INFO 7340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces.
-2021-02-22 20:32:57.552  INFO 7340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-02-22 20:32:57.560  INFO 7340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-02-22 20:32:57.561  INFO 7340 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-02-22 20:32:57.730  INFO 7340 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2021-02-22 20:32:57.734  INFO 7340 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-02-22 20:32:57.734  INFO 7340 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1053 ms
-2021-02-22 20:32:57.881  INFO 7340 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-02-22 20:32:57.942  INFO 7340 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-02-22 20:32:58.089  INFO 7340 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-02-22 20:32:58.162  INFO 7340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-02-22 20:32:58.488  INFO 7340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-02-22 20:32:58.510  INFO 7340 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-02-22 20:32:58.979  INFO 7340 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-02-22 20:32:58.986  INFO 7340 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-02-22 20:32:59.396  WARN 7340 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-02-22 20:32:59.593  INFO 7340 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-02-22 20:32:59.762  INFO 7340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-02-22 20:32:59.768  INFO 7340 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.468 seconds (JVM running for 3.868)
-2021-02-22 20:33:15.936  INFO 7340 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-02-22 20:33:15.936  INFO 7340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-02-22 20:33:15.937  INFO 7340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-02-22 21:09:37.057  INFO 7340 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-02-22 21:09:37.058  INFO 7340 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-02-22 21:09:37.059  INFO 7340 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-02-22 21:09:37.064  INFO 7340 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-25 20:25:20.683  INFO 4885 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 4885 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-25 20:25:20.688  INFO 4885 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-25 20:25:21.197  INFO 4885 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 20:25:21.234  INFO 4885 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces.
+2021-02-25 20:25:21.675  INFO 4885 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-25 20:25:21.683  INFO 4885 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 20:25:21.684  INFO 4885 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 20:25:21.871  INFO 4885 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-25 20:25:21.875  INFO 4885 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 20:25:21.875  INFO 4885 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1135 ms
+2021-02-25 20:25:22.186  INFO 4885 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 20:25:22.277  INFO 4885 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 20:25:22.651  INFO 4885 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 20:25:22.802  INFO 4885 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-25 20:25:23.162  INFO 4885 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-25 20:25:23.184  INFO 4885 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 20:25:23.607  INFO 4885 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 20:25:23.613  INFO 4885 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 20:25:23.972  WARN 4885 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 20:25:24.149  INFO 4885 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 20:25:24.322  INFO 4885 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 20:25:24.328  INFO 4885 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.938 seconds (JVM running for 4.297)
+2021-02-25 20:28:00.288  INFO 4885 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 20:28:00.289  INFO 4885 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-25 20:28:00.290  INFO 4885 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-25 20:29:40.289 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : File format could not be determined
+2021-02-25 20:29:40.290 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2000-01-01 02.21.10.3gp ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:40.290 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:40.291 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:42.137 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-03-04 03.56.48.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:42.138 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:42.532 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-03-04 14.18.30.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:42.532 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:42.737 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-03-04 20.26.54.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:42.737 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:43.844 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-03-08 16.47.26.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:43.844 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:46.878 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-03-18 20.36.44.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:46.878 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:49.985 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-03-25 21.05.26.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:49.986 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:50.274 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-04-01 14.39.44.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:50.274 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:50.307 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-04-01 20.37.54.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:50.308 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:52.642 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-04-12 23.32.30.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:52.642 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:52.766 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-04-13 00.05.10.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:52.766 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:52.898 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-04-13 14.08.39.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:52.898 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:54.152 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-05-07 19.00.36.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:54.152 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:54.198 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-05-07 19.06.14.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:54.198 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:56.175 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-05-12 20.10.23.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:56.176 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:56.206 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-05-13 00.01.24.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:56.206 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:56.276 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-05-13 05.12.04.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:56.276 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:56.301 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-05-13 05.30.32.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:56.301 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:29:56.737 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-05-24 02.31.22.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:29:56.737 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:00.947 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.40.48.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:00.947 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:00.958 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.40.58.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:00.958 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:00.969 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.41.08.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:00.969 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:00.981 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.41.18.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:00.982 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:00.992 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.41.49.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:00.992 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.002 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.42.03.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.003 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.012 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.43.11.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.013 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.023 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.43.22.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.023 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.034 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.43.44.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.034 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.045 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.44.19.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.045 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.055 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.45.16.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.056 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.080 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.45.34.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.080 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.090 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.45.47.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.090 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.099 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.47.17.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.100 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.108 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.47.49.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.108 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.116 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.48.08.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.117 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.126 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.50.36.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.126 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.136 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 21.13.52.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.137 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.146 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 21.14.26.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.147 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.159 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 21.15.04.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.159 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.167 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 21.15.36.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.167 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.176 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 21.16.14.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.176 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.185 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 21.16.32.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.185 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.194 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 21.16.58.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.194 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.204 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 21.18.12.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.204 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:01.212 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 21.24.48.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:01.212 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:02.224 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-22 13.47.20.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:02.225 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:03.259 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-07-07 05.21.50.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:03.260 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:03.310 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-07-09 09.36.38.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:03.310 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:03.338 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-07-11 23.23.58.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:03.338 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:03.357 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-07-11 23.43.22.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:03.358 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:03.373 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-07-11 23.44.24.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:03.373 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:05.215 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-06-06 00.46.54.jps ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:05.216 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:05.400 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-07-07 05.19.56.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:05.401 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:05.551 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-04-01 20.36.36.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:05.551 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:09.616 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-09-25 19.58.24.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:09.616 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:09.937 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-09-27 12.29.10.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:09.937 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:12.981 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : 2012-10-10 22.02.24.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:12.981 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:14.585 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : IMG-20121014-WA0000.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:30:14.585 ERROR 4885 --- [http-nio-8080-exec-9] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:30:14.599  INFO 4885 --- [http-nio-8080-exec-9] c.p.c.UrlPhotoLocationController         : /media/davide/Volume/Foto/foto 2012/foto drop
+2021-02-25 20:35:16.987 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Draw on Pictures_1448576372886.PNG ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:16.987 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:17.005 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : image-330a3bb577a5778985ed5695d34ae60a89ae58ad5c2f9b4d3784ce3d21be856c-V.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:17.006 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:17.015 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : image-3eb7bc6392ef5fce955c22f4e5cd4bf90aef518cb8cff57a24109f0d32039bc1-V.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:17.015 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:17.024 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : image-53ceb4c1a6726154eecc1677acb2258700f0fd298d0351ca57eec96713d2fa3d-V.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:17.024 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:17.032 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : image-942a52cde51ebf83ba6f6b1b127f669adf642e6f640ce9f8409a5874322a4826-V.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:17.032 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:17.043 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : image-cddf59338afa2f1f374549577a14c8b30e9b7bd800891c1fee612d3a32148273-V.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:17.044 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:56.975 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8110040.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:56.976 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:58.142 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8110067.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:58.142 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:58.184 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8110068.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:58.185 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:58.355 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8110073.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:58.356 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:58.432 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8110075.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:58.432 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:58.880 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8110092.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:58.880 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:35:59.164 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8130107.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:35:59.164 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:02.920 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8210313.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:02.920 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:02.997 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8210315.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:02.998 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.286 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8220325.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.286 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.346 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8220326.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.346 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.466 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8220329.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.466 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.518 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : P8220330.MP4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.518 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.805 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-08-07-20-05-14.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.805 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.840 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-08-07-20-05-30.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.841 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.876 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-08-07-23-30-37.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.876 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.915 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-08-11-19-47-35.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.915 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.947 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-08-13-11-15-07.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.948 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:03.985 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-08-31-14-35-57.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:03.985 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.028 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-09-17-14-12-19.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.028 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.083 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-09-17-14-12-23.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.083 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.105 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-09-18-22-15-29.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.105 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.127 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-09-18-22-16-36.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.127 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.159 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-10-31-18-29-01.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.159 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.188 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-01-21-00-36.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.189 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.232 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-01-21-01-01.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.232 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.256 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-01-23-39-52.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.256 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.293 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-01-23-45-06.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.293 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.321 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-02-08-44-45.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.321 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.362 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-06-12-12-40.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.362 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.389 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-11-16-38-58.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.390 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.421 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-11-16-39-11.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.422 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.444 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-18-00-27-13.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.444 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.479 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-18-18-37-09.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.479 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.501 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-20-15-28-18.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.501 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.523 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-20-15-32-39.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.524 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.552 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-21-10-21-07.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.552 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.575 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-22-15-06-25.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.575 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.600 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-24-22-32-39.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.600 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.624 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-26-12-32-40.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.624 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.646 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-27-00-11-38.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.647 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.677 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-27-14-07-37.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.677 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.706 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-28-12-03-53.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.706 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.729 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-29-10-59-17.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.729 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.740 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-29-11-07-34.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.740 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.748 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-29-11-10-52.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.748 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.763 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-29-11-11-32.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.763 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.776 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-29-22-47-05.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.776 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.797 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-02-10-43-43.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.797 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.820 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-02-10-44-37.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.821 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.843 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-02-13-38-55.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.844 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.875 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-02-13-39-48.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.876 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.884 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-02-13-40-36.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.884 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.893 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-02-13-46-20.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.893 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.913 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-02-13-47-09.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.913 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.922 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-02-17-50-33.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.922 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.934 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-03-21-02-29.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.934 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:04.945 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-03-21-04-17.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:04.945 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.310 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-09-02-21-41-26.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.311 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.337 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-17-15-36-36.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.338 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.385 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-11-29-11-10-22.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.385 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.417 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-03-21-21-23.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.417 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.440 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-16-09-55-48.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.440 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.456 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-08-00-00-33.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.456 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.474 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-05-13-56-25.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.474 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.492 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-03-20-23-17-04.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.492 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.501 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-03-21-45-18.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.502 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.529 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-03-21-45-33.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.529 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.545 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-03-21-45-44.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.545 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.552 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-03-21-48-30.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.552 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.573 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-04-09-35-43.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.573 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.597 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-04-09-35-51.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.597 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.607 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-05-10-41-14.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.607 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.619 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-08-16-37-27.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.619 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.642 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-09-14-25-29.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.642 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.666 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-09-14-25-56.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.667 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.685 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-09-14-26-16.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.685 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.704 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-13-16-37-23.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.704 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.723 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-13-16-58-43.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.723 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.742 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-16-09-56-34.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.742 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.763 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-16-09-58-25.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.763 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.784 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-18-21-24-37.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.784 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.803 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-19-09-36-09.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.803 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.831 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-19-16-00-00.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.831 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.856 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-19-23-27-38.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.857 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.874 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-19-23-29-32.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.874 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.905 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-20-14-37-27.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.905 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.922 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-20-18-03-35.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.922 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.941 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-20-18-03-45.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.941 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.962 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-23-14-20-30.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.962 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.979 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-23-14-20-38.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.979 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:05.995 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2015-12-23-14-20-45.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:05.996 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.023 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-08-00-00-37.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.023 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.044 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-21-14-00-28.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.044 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.062 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-22-23-33-51.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.063 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.092 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-23-17-50-32.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.092 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.109 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-25-00-11-13.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.109 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.125 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-25-00-11-31.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.125 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.152 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-25-00-11-37.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.152 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.174 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-26-06-42-48.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.175 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.204 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-26-19-16-29.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.205 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.232 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-01-29-19-31-28.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.232 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.249 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-01-23-01-00.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.249 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.269 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-01-23-01-04.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.269 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.289 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-01-23-01-08.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.289 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.306 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-08-08-07-17.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.307 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.324 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-08-08-07-22.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.324 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.342 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-08-08-07-29.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.342 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.377 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-08-19-20-12.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.377 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.416 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-08-21-55-41.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.416 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.432 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-09-08-25-13.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.432 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.447 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-14-17-20-59.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.447 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.457 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-15-16-44-58.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.457 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.469 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-17-08-12-44.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.469 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.491 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-18-11-30-42.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.492 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.522 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-26-13-34-42.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.522 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.545 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-02-29-13-47-00.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.545 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.556 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-03-04-13-16-33.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.556 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.574 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-03-20-23-19-05.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.575 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.597 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-03-22-18-58-51.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.597 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.609 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-03-24-13-25-33.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.609 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.620 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-03-27-18-34-34.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.620 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.631 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-03-27-18-35-46.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.631 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.643 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-04-06-20-19-56.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.643 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.654 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-04-07-00-31-18.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.654 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.678 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : Screenshot_2016-04-07-00-33-47.png ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.678 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.731 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20150802_164027.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.732 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.773 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20150809_151802.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.773 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.817 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20150810_142723.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.818 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.856 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20150831_170947.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.856 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.888 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20151007_153052.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.888 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.925 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20151007_153147.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.926 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:06.961 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20151011_145904.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:06.961 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.015 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20151021_154510.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.015 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.061 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20151106_180642.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.061 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.101 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20151220_215110.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.101 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.145 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20160123_171545.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.146 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.193 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : VID_20160125_193519.mp4 ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.193 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.232 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : wp_001.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.232 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.263 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : wp_002.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.263 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.291 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : wp_003.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.291 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.319 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : wp_004.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.319 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.347 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : wp_005.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.347 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.378 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : wp_006.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.378 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.408 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : wp_007.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.408 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.428 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : wp_008.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.428 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.449 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : wp_009.jpg ha il tag ExifIFD0Directory nullo
+2021-02-25 20:36:07.449 ERROR 4885 --- [http-nio-8080-exec-6] c.p.service.FetchPhotoPropertiesService  : null
+2021-02-25 20:36:07.457  INFO 4885 --- [http-nio-8080-exec-6] c.p.c.UrlPhotoLocationController         : /media/davide/Volume/Foto/Foto One Drive
+2021-02-25 20:52:25.497  INFO 4885 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 20:52:25.497  INFO 4885 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 20:52:25.499  INFO 4885 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-25 20:52:25.501  INFO 4885 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-25 20:52:43.545  INFO 10023 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 10023 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-25 20:52:43.547  INFO 10023 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-25 20:52:43.953  INFO 10023 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 20:52:43.986  INFO 10023 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2021-02-25 20:52:44.366  INFO 10023 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-25 20:52:44.375  INFO 10023 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 20:52:44.375  INFO 10023 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 20:52:44.539  INFO 10023 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-25 20:52:44.543  INFO 10023 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 20:52:44.543  INFO 10023 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 967 ms
+2021-02-25 20:52:44.693  INFO 10023 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 20:52:44.730  INFO 10023 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 20:52:44.851  INFO 10023 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 20:52:44.913  INFO 10023 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-25 20:52:45.220  INFO 10023 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-25 20:52:45.238  INFO 10023 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 20:52:45.629  INFO 10023 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 20:52:45.634  INFO 10023 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 20:52:45.970  WARN 10023 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 20:52:46.147  INFO 10023 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 20:52:46.312  INFO 10023 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 20:52:46.318  INFO 10023 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.055 seconds (JVM running for 3.312)
+2021-02-25 20:53:07.778  INFO 10023 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 20:53:07.778  INFO 10023 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-25 20:53:07.779  INFO 10023 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-25 20:53:07.811 ERROR 10023 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at java.io.File.<init>(File.java:277) ~[na:1.8.0_271]
+	at com.photosOrganizer.service.FetchPhotoPropertiesService.getPhotosNameFromUrl(FetchPhotoPropertiesService.java:56) ~[classes/:na]
+	at com.photosOrganizer.service.FetchPhotoPropertiesService.saveAllPhotoFormUrl(FetchPhotoPropertiesService.java:45) ~[classes/:na]
+	at com.photosOrganizer.controller.UrlPhotoLocationController.insertPhotosFromUrl(UrlPhotoLocationController.java:71) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_271]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_271]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_271]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_271]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_271]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_271]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_271]
+
+2021-02-25 20:54:05.017  INFO 10023 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 20:54:05.017  INFO 10023 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 20:54:05.019  INFO 10023 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-25 20:54:05.023  INFO 10023 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-25 20:54:56.905  INFO 10164 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 10164 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-25 20:54:56.907  INFO 10164 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-25 20:54:57.319  INFO 10164 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 20:54:57.352  INFO 10164 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2021-02-25 20:54:57.715  INFO 10164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-25 20:54:57.723  INFO 10164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 20:54:57.724  INFO 10164 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 20:54:57.904  INFO 10164 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-25 20:54:57.907  INFO 10164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 20:54:57.907  INFO 10164 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 969 ms
+2021-02-25 20:54:58.043  INFO 10164 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 20:54:58.073  INFO 10164 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 20:54:58.195  INFO 10164 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 20:54:58.259  INFO 10164 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-25 20:54:58.579  INFO 10164 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-25 20:54:58.598  INFO 10164 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 20:54:58.985  INFO 10164 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 20:54:58.989  INFO 10164 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 20:54:59.322  WARN 10164 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 20:54:59.521  INFO 10164 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 20:54:59.692  INFO 10164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 20:54:59.698  INFO 10164 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.065 seconds (JVM running for 3.297)
+2021-02-25 20:55:07.834  INFO 10164 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 20:55:07.835  INFO 10164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-25 20:55:07.836  INFO 10164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-25 20:56:47.030  INFO 10164 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 20:56:47.031  INFO 10164 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 20:56:47.033  INFO 10164 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-25 20:56:47.039  INFO 10164 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-25 20:57:28.000  INFO 10268 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 10268 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-25 20:57:28.002  INFO 10268 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-25 20:57:28.418  INFO 10268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 20:57:28.453  INFO 10268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2021-02-25 20:57:28.813  INFO 10268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-25 20:57:28.821  INFO 10268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 20:57:28.822  INFO 10268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 20:57:29.006  INFO 10268 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-25 20:57:29.008  INFO 10268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 20:57:29.009  INFO 10268 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 974 ms
+2021-02-25 20:57:29.135  INFO 10268 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 20:57:29.162  INFO 10268 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 20:57:29.298  INFO 10268 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 20:57:29.375  INFO 10268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-25 20:57:29.686  INFO 10268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-25 20:57:29.704  INFO 10268 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 20:57:30.071  INFO 10268 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 20:57:30.077  INFO 10268 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 20:57:30.408  WARN 10268 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 20:57:30.642  INFO 10268 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 20:57:30.805  INFO 10268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 20:57:30.811  INFO 10268 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.097 seconds (JVM running for 3.323)
+2021-02-25 20:57:41.335  INFO 10268 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 20:57:41.335  INFO 10268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-25 20:57:41.336  INFO 10268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-25 20:59:59.205  INFO 10268 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 20:59:59.207  INFO 10268 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 20:59:59.210  INFO 10268 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-25 20:59:59.217  INFO 10268 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-25 21:06:57.742  INFO 10569 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 10569 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-25 21:06:57.744  INFO 10569 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-25 21:06:58.152  INFO 10569 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 21:06:58.185  INFO 10569 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
+2021-02-25 21:06:58.564  INFO 10569 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-25 21:06:58.573  INFO 10569 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 21:06:58.573  INFO 10569 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 21:06:58.761  INFO 10569 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-25 21:06:58.765  INFO 10569 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 21:06:58.765  INFO 10569 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 991 ms
+2021-02-25 21:06:58.897  INFO 10569 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 21:06:58.927  INFO 10569 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 21:06:59.053  INFO 10569 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 21:06:59.111  INFO 10569 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-25 21:06:59.415  INFO 10569 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-25 21:06:59.433  INFO 10569 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 21:06:59.820  INFO 10569 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 21:06:59.825  INFO 10569 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:07:00.158  WARN 10569 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 21:07:00.329  INFO 10569 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:07:00.486  INFO 10569 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 21:07:00.492  INFO 10569 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.037 seconds (JVM running for 3.28)
+2021-02-25 21:07:07.495  INFO 10569 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 21:07:07.495  INFO 10569 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-25 21:07:07.496  INFO 10569 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-25 21:25:22.983  INFO 10569 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:25:22.985  INFO 10569 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:25:22.988  INFO 10569 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-25 21:25:22.994  INFO 10569 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-25 21:26:41.923  INFO 13192 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 13192 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-25 21:26:41.927  INFO 13192 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-25 21:26:42.326  INFO 13192 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 21:26:42.359  INFO 13192 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2021-02-25 21:26:42.728  INFO 13192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-25 21:26:42.736  INFO 13192 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 21:26:42.736  INFO 13192 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 21:26:42.922  INFO 13192 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-25 21:26:42.926  INFO 13192 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 21:26:42.926  INFO 13192 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 969 ms
+2021-02-25 21:26:43.058  INFO 13192 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 21:26:43.086  INFO 13192 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 21:26:43.205  INFO 13192 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 21:26:43.265  INFO 13192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-25 21:26:43.568  INFO 13192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-25 21:26:43.586  INFO 13192 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 21:26:43.949  INFO 13192 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 21:26:43.954  INFO 13192 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:26:44.289  WARN 13192 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 21:26:44.536  INFO 13192 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:26:44.700  INFO 13192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 21:26:44.706  INFO 13192 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.046 seconds (JVM running for 3.283)
+2021-02-25 21:26:53.466  INFO 13192 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 21:26:53.466  INFO 13192 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-25 21:26:53.467  INFO 13192 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-25 21:32:20.249  INFO 13192 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:32:20.249  INFO 13192 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:32:20.251  INFO 13192 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-25 21:32:20.254  INFO 13192 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-25 21:32:28.013  INFO 13427 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 13427 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-25 21:32:28.015  INFO 13427 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-25 21:32:28.453  INFO 13427 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 21:32:28.488  INFO 13427 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2021-02-25 21:32:28.887  INFO 13427 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-25 21:32:28.895  INFO 13427 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 21:32:28.895  INFO 13427 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 21:32:29.079  INFO 13427 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-25 21:32:29.082  INFO 13427 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 21:32:29.082  INFO 13427 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1034 ms
+2021-02-25 21:32:29.219  INFO 13427 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 21:32:29.252  INFO 13427 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 21:32:29.400  INFO 13427 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 21:32:29.464  INFO 13427 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-25 21:32:29.804  INFO 13427 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-25 21:32:29.822  INFO 13427 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 21:32:30.207  INFO 13427 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 21:32:30.212  INFO 13427 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:32:30.572  WARN 13427 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 21:32:30.788  INFO 13427 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:32:30.960  INFO 13427 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 21:32:30.969  INFO 13427 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.233 seconds (JVM running for 3.473)
+2021-02-25 21:32:33.571  INFO 13427 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 21:32:33.571  INFO 13427 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-25 21:32:33.572  INFO 13427 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-02-25 21:52:00.998  INFO 13427 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:52:00.999  INFO 13427 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:52:01.002  INFO 13427 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-25 21:52:01.009  INFO 13427 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-25 21:52:07.822  INFO 14373 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 14373 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-25 21:52:07.824  INFO 14373 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-25 21:52:08.262  INFO 14373 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 21:52:08.297  INFO 14373 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
+2021-02-25 21:52:08.696  INFO 14373 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-25 21:52:08.705  INFO 14373 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 21:52:08.705  INFO 14373 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 21:52:08.910  INFO 14373 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-25 21:52:08.913  INFO 14373 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 21:52:08.913  INFO 14373 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1057 ms
+2021-02-25 21:52:09.041  INFO 14373 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 21:52:09.070  INFO 14373 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 21:52:09.186  INFO 14373 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 21:52:09.246  INFO 14373 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-25 21:52:09.558  INFO 14373 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-25 21:52:09.577  INFO 14373 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 21:52:09.962  INFO 14373 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 21:52:09.967  INFO 14373 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:52:10.306  WARN 14373 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 21:52:10.508  INFO 14373 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:52:10.694  INFO 14373 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 21:52:10.700  INFO 14373 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.156 seconds (JVM running for 3.404)
+2021-02-25 21:52:19.686  INFO 14373 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 21:52:19.686  INFO 14373 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-25 21:52:19.687  INFO 14373 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-25 21:52:34.793 ERROR 14373 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: No primary or single public constructor found for interface java.util.List - and no default constructor found either] with root cause
+
+java.lang.IllegalStateException: No primary or single public constructor found for interface java.util.List - and no default constructor found either
+	at org.springframework.beans.BeanUtils.getResolvableConstructor(BeanUtils.java:250) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.web.method.annotation.ModelAttributeMethodProcessor.createAttribute(ModelAttributeMethodProcessor.java:214) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletModelAttributeMethodProcessor.createAttribute(ServletModelAttributeMethodProcessor.java:85) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.method.annotation.ModelAttributeMethodProcessor.resolveArgument(ModelAttributeMethodProcessor.java:142) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:170) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_271]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_271]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_271]
+
+2021-02-25 21:53:52.282  INFO 14373 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:53:52.283  INFO 14373 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:53:52.286  INFO 14373 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-25 21:53:52.292  INFO 14373 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-25 21:54:03.107  INFO 14525 --- [main] c.p.PhotosOrganizerApplication           : Starting PhotosOrganizerApplication using Java 1.8.0_271 on davide-MS-7A72 with PID 14525 (/home/davide/repositories/photosOrganizer/target/classes started by davide in /home/davide/repositories/photosOrganizer)
+2021-02-25 21:54:03.109  INFO 14525 --- [main] c.p.PhotosOrganizerApplication           : No active profile set, falling back to default profiles: default
+2021-02-25 21:54:03.535  INFO 14525 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 21:54:03.569  INFO 14525 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
+2021-02-25 21:54:03.950  INFO 14525 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-25 21:54:03.960  INFO 14525 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 21:54:03.960  INFO 14525 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 21:54:04.161  INFO 14525 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-02-25 21:54:04.164  INFO 14525 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 21:54:04.164  INFO 14525 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1020 ms
+2021-02-25 21:54:04.299  INFO 14525 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 21:54:04.329  INFO 14525 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 21:54:04.445  INFO 14525 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 21:54:04.504  INFO 14525 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-25 21:54:04.814  INFO 14525 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-25 21:54:04.832  INFO 14525 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 21:54:05.217  INFO 14525 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 21:54:05.223  INFO 14525 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:54:05.566  WARN 14525 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 21:54:05.771  INFO 14525 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:54:05.938  INFO 14525 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 21:54:05.944  INFO 14525 --- [main] c.p.PhotosOrganizerApplication           : Started PhotosOrganizerApplication in 3.115 seconds (JVM running for 3.34)
+2021-02-25 21:54:14.617  INFO 14525 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 21:54:14.618  INFO 14525 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-25 21:54:14.618  INFO 14525 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-02-25 21:56:18.392  INFO 14525 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 21:56:18.392  INFO 14525 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 21:56:18.397  INFO 14525 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-25 21:56:18.402  INFO 14525 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
