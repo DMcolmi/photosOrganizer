@@ -35,7 +35,8 @@
 	</table>
 	<br />
 	<br />
-	<form action="fetchDataTest">
+	<form action="cleanModelMetadata">
+	Selezionare i modelli corretti da tenere. i modelli non selezionati verranno cancellati <br /> 
 		<table>
 			<c:forEach items="${models}" var="model">
 				<tr>
@@ -48,7 +49,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<input type="submit" value="Submit now" />
+		<input type="submit" value="Cancella i modelli non selezionati"/>
 	</form>
 </body>
 </html>

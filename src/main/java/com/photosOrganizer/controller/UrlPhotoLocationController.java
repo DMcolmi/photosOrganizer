@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.photosOrganizer.dao.PhotoBaseRepository;
 import com.photosOrganizer.dao.UrlPhotoLocationRepository;
 import com.photosOrganizer.model.UrlPhotoLocation;
+import com.photosOrganizer.service.CleanMetadataService;
 import com.photosOrganizer.service.FetchPhotoPropertiesService;
 
 @Controller
@@ -28,6 +29,9 @@ public class UrlPhotoLocationController {
 	
 	@Autowired
 	private PhotoBaseRepository photoRepo;
+	
+	@Autowired
+	private CleanMetadataService cleanDataService;
 	
 	@RequestMapping("/InsertUrlForm")
 	public ModelAndView insertUrlForm() {
@@ -97,15 +101,15 @@ public class UrlPhotoLocationController {
 		return mv;
 	}
 	
-	@RequestMapping("/fetchDataTest")
-	public ModelAndView fetchDataTest(String model) {
+	@RequestMapping("/cleanModelMetadata")
+	public ModelAndView cleanModelMetadata(String model) {
 		ModelAndView mv = new ModelAndView();
 		
-		System.out.println(model);
+		cleanDataService.cleanWrongPhotoModelMetadata(model);
 		
-		mv.setViewName("ProcessByUrlAndExtension");
+		mv.setViewName("InsertUrlForm");
 	
 		return mv;
 	}
 	
-}
+} 
