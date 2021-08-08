@@ -31,6 +31,11 @@ public interface PhotoBaseRepository extends JpaRepository<PhotoBase, String> {
 	@Modifying
 	@Query("update PhotoBase u set u.model = null where u.model not in :models")
 	public void cleanModelMetadata(@Param("models") List<String> models);
+	
+	@Transactional
+	@Query("select distinct year(coalesce(p.dateOriginal, p.date, sysdate() )) from PhotoBase p")
+	public List<String> getPhotoYears();
+	
 		
 }
 

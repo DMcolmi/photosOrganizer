@@ -91,12 +91,15 @@ public class UrlPhotoLocationController {
 		
 		List<String> models = photoRepo.fetchAllModel();
 		
+		List<String> photoYears = photoRepo.getPhotoYears();
+		
 		mv.setViewName("ProcessByUrlAndExtension");
 		
 		mv.addObject("urls", urls);
 		mv.addObject("extensions", extensions);
 		mv.addObject("makes", makes);
 		mv.addObject("models", models);
+		mv.addObject("photoYears",photoYears);
 		
 		return mv;
 	}
