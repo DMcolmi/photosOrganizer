@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.photosOrganizer.dao.PhotoBaseRepository;
 import com.photosOrganizer.dao.UrlPhotoLocationRepository;
+import com.photosOrganizer.model.PhotoBase;
 import com.photosOrganizer.model.UrlPhotoLocation;
 import com.photosOrganizer.service.CleanMetadataService;
 import com.photosOrganizer.service.FetchPhotoPropertiesService;
@@ -93,6 +94,9 @@ public class UrlPhotoLocationController {
 		
 		List<String> photoYears = photoRepo.getPhotoYears();
 		
+		List<String> photoMonths = photoRepo.getPhotoMonths();
+
+		
 		mv.setViewName("ProcessByUrlAndExtension");
 		
 		mv.addObject("urls", urls);
@@ -100,6 +104,7 @@ public class UrlPhotoLocationController {
 		mv.addObject("makes", makes);
 		mv.addObject("models", models);
 		mv.addObject("photoYears",photoYears);
+		mv.addObject("photoMonths",photoMonths);
 		
 		return mv;
 	}
@@ -111,6 +116,18 @@ public class UrlPhotoLocationController {
 		cleanDataService.cleanWrongPhotoModelMetadata(model);
 		
 		mv.setViewName("InsertUrlForm");
+	
+		return mv;
+	}
+	
+	@RequestMapping("/showPhotoByYearMonth")
+	public ModelAndView showPhotoByYearMonth(String photoMonth, String photoYear) {
+		ModelAndView mv = new ModelAndView();
+		
+		
+		List<PhotoBase> photos = photoRepo.getPhotoBetweenInterval(Integer.parseInt(photoYear), Integer.parseInt(photoMonth));
+		mv.addObject("photos", photos);
+		mv.setViewName("showPhotoByYearMonth");
 	
 		return mv;
 	}
