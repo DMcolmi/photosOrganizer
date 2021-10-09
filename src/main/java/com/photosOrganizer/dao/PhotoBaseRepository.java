@@ -36,6 +36,15 @@ public interface PhotoBaseRepository extends JpaRepository<PhotoBase, String> {
 	@Query("select distinct year(coalesce(p.dateOriginal, p.date, sysdate() )) from PhotoBase p")
 	public List<String> getPhotoYears();
 	
-		
+	@Transactional
+	@Query("select distinct month(coalesce(p.dateOriginal, p.date)) from PhotoBase p")
+	public List<String> getPhotoMonths();
+	
+	
+	//select * from t_photo_base where YEAR(coalesce(date,date_original)) > 2018 and YEAR(coalesce(date,date_original)) < 2020 and MONTH(coalesce(date,date_original)) > 3 and MONTH(coalesce(date,date_original)) <5;
+	
+	@Transactional
+	@Query("select p from PhotoBase p where year(coalesce(p.dateOriginal, p.date)) < (ryear + 1) and year(coalesce(p.dateOriginal, p.date)) > (ryear - 1) and month(coalesce(p.dateOriginal, p.date)) < (rmonth + 1) and month(coalesce(p.dateOriginal, p.date)) > (rmonth - 1)")
+	public List<PhotoBase> getPhotoBetweenInterval(@Param("ryear") int ryear, @Param("rmonth") int rmonth);
 }
 

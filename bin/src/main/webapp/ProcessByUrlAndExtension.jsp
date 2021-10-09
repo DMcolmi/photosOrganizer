@@ -62,29 +62,5 @@
 			<br><br>
 		</form>
 		
-		<form action="showPhotoByYearMonth">
-			<select name = "photoYear">
-				<option value="${selected}" selected>${selected}</option>
-				<c:forEach items="${photoYears}" var="photoYear"> 
-					<c:if test="${photoYear != selected}"> 
-						<option value="${photoYear}" id="photoYear">${photoYear}</option>
-					</c:if>
-				</c:forEach>			
-			</select>
-			
-			<select name="photoMonth">
-			 	<option value="${selected}" selected>${selected}</option>
-				<c:forEach items="${photoMonths}" var="photoMonth">
-					<c:if test="${photoMonth != selected}"> 
-						<option value="${photoMonth}" id="photoMonth">${photoMonth}</option>
-					</c:if>
-				</c:forEach>			
-			</select>
-			
-			<br>
-			<input type="submit" value="cerca foto">			
-		
-		</form>
-		
 	</body>
 </html>
