@@ -12,6 +12,8 @@ public class UrlPhotoLocation {
 	
 	private String url;
 	
+	private String dirType;
+	
 	@Id
 	@GeneratedValue
 	private int id;	
@@ -28,4 +30,11 @@ public class UrlPhotoLocation {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	public String getDirType() {
+		return dirType;
+	}
+	public void setDirType(String dirType) {
+		this.dirType = dirType;
+	}	
+	
 }

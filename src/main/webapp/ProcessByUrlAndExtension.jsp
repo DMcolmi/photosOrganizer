@@ -62,5 +62,10 @@
 			<br><br>
 		</form>
 		
+		<br><br>
+		<form action="">
+			<input type="file" id="ctrl" webkitdirectory directory/>
+		</form>
+		
 	</body>
 </html>

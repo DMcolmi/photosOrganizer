@@ -106,14 +106,7 @@ public class FetchPhotoPropertiesService {
 		}
 	}
 	
-	public List<String> getPhotoYears(){
 		
-		List<String> photoYears = photoRepo.getPhotoYears();
-				
-		return photoYears;
-				
-	}
-	
 	public static void main(String[] args) throws FileNotFoundException {
 		
 //		File file = new File("/home/davide/Downloads/papa-francesco.epub");
