@@ -12,10 +12,14 @@
 		<c:forEach items="${urls}" var="url">
 			<tr>
 				<td><c:out value="${url.id}" /></td>
-				<td><form action="InsertPhotosFromUrl">
-					<input type="text" name="url" value="${url.url}">
-					<input type="submit" value="Submit" />
-				</form></td>
+				<td>
+					<form action="InsertPhotosFromUrl">
+						<input type="text" name="url" value="${url.url}" readonly="readonly">
+						<c:out value="${url.dirType}"></c:out>
+						<input type="submit" value="Submit" />
+					</form>
+				</td>
+				
 			</tr>
 		</c:forEach>
 	</table>

@@ -8,8 +8,10 @@
 </head>
 <body>
 	<form action="InsertUrl">
-		Inserire l'URL location delle foto: <br /> 
+		Inserire il path delle foto: <br /> 
 		<input type="text" name="url"> <br /> 
+		<input type="radio" name="dirType" value="src">Path origine foto <br>
+		<input type="radio" name="dirType" value="trg">Path destinazione foto <br>
 		<input type="submit" value="Submit" />
 	</form>
 	
